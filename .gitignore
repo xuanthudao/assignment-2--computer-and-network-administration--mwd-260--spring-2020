@@ -1,5 +1,6 @@
+*
+
 !.gitignore
 !README.md
-
-.DS_Store
-.idea/
+!pre-commit
+!kernel-log-backup.sh
