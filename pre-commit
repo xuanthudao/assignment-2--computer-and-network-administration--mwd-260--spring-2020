@@ -10,6 +10,7 @@
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
 	against=HEAD
+	echo "pre-commit: About to create a new commit..."
 else
 	# Initial commit: diff against an empty tree object
 	against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
@@ -41,16 +42,15 @@ EOF
 	exit 1
 fi
 
+echo "pre-commit: Testing for whitespace errors 😨"
 # If there are whitespace errors, print the offending file names and fail.
-exec git diff-index --check --cached $against --
+if git diff-index --check --cached $against --
 
-if git commit
-then git diff-index --check --cached $against --
-	echo "pre-commit: About to create a new commit... /npre-commit: Testing for whitespace errors 😨 /npre-commit: No whitespace errors 😀"
+then 
+	echo "pre-commit: No whitespace errors 😀"
 else
 	git revert
 	then
-	echo "pre-commit: About to create a new commit... /npre-commit: Testing for whitespace errors 😨 
-	/npre-commit: Aborting commit due to whitespace errors ☹️"
+	echo "pre-commit: Aborting commit due to whitespace errors ☹️"
 
 fi
