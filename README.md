@@ -56,55 +56,8 @@ A. Copy the contents of your global Git config settings and paste it below. Use 
 [user]
 	email = thegaoranger@gmail.com
 	username = xuanthudao
-[core]
-	editor = vim
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = ~/.gitignore
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = thegaoranger@gmail.com
-[web]
-	browser = google-chrome
-[instaweb]
-	httpd = apache2 -f
-[rerere]
-	enabled = 1
-	autoupdate = 1
-[push]
-	default = matching
-[color]
-	ui = auto
-[color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[github]
-	user = xuanthudao
-	token = token
-[gitflow "prefix"]
-	versiontag = v
-[sequence]
-	editor = interactive-rebase-tool
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+[init]
+	templatedir = ~/.git-templates
 ```
 
 B. Place the entire contents of your pre commit hook in the included file `pre-commit`.
